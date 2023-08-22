@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+
+import { getQueriesForElement } from '@testing-library/react';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+ const [num,setNum] = useState(0)
+  let ing = ()=>{
+    setNum(num+1)
+  
+  }
+
+  let dec= ()=>{
+    setNum(num-1)
+  }
+let szero = () =>{
+  setNum(0)
+}
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>{num}</h1>
+     <button onClick={ing}>Increase</button>&nbsp;&nbsp;
+     <button onClick={dec}>Decrease</button>&nbsp;&nbsp;
+     <button onClick={szero}>Reset to Zero</button>&nbsp;&nbsp;
     </div>
+    </>
   );
 }
+
 
 export default App;
